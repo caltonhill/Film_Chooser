@@ -1,13 +1,9 @@
-# specify input file
-# need to make work with full path
 # need to make work with xlsx file
 
-input_file = "films_test.txt"
-current_film_list = File.read(input_file)
+source = File.open("C:\\Users\\James\\Google Drive\\films.csv", "r" )
 
-=begin  A check that is now not needed:
-film_count = current_film_list.split("\n").size
-=end
+current_film_list = File.read(source)
+
 puts "----------------------------"
 puts "Hooray! The weekend is here."
 puts "A chance to watch a film."
@@ -15,7 +11,7 @@ puts "----------------------------"
 
 # get each line/film from the file and put it into an array
 films_array = []
-current_film_list.split("\n").each do |film|
+current_film_list.each_line do |film|
 	films_array << film
 end
 
